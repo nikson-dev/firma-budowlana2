@@ -5,58 +5,154 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Solid Construction | Firma Budowlana Kraków</title>
-<meta name="description" content="Profesjonalna firma budowlana w Krakowie. Budowa domów, remonty, elewacje. Darmowa wycena.">
+<meta name="description" content="Profesjonalna firma budowlana w Krakowie. Budowa domów, remonty, elewacje, wykończenia.">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#0f0f0f;color:#fff;scroll-behavior:smooth}
+html{scroll-behavior:smooth}
+body{background:#0f0f0f;color:#fff}
+
+/* HEADER */
 header{
-position:fixed;width:100%;padding:20px 10%;
-display:flex;justify-content:space-between;
-background:rgba(0,0,0,0.85);z-index:1000
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.9);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+z-index:1000;
+backdrop-filter:blur(10px);
 }
-header a{color:#f5a623;text-decoration:none;font-weight:600}
+
+.logo{
+font-weight:700;
+font-size:22px;
+}
+
+nav a{
+margin-left:25px;
+text-decoration:none;
+color:#fff;
+font-weight:500;
+position:relative;
+transition:.3s;
+}
+
+nav a::after{
+content:"";
+position:absolute;
+width:0;
+height:2px;
+background:#f5a623;
+left:0;
+bottom:-5px;
+transition:.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+/* HERO */
 .hero{
 height:100vh;
 background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
 url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');
-background-size:cover;background-position:center;
-display:flex;align-items:center;justify-content:center;
-text-align:center;padding:20px
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
 }
-.hero h1{font-size:50px;margin-bottom:20px}
+
+.hero h1{font-size:55px;margin-bottom:20px}
 .hero p{font-size:20px;color:#ccc;margin-bottom:30px}
+
 .btn{
-padding:15px 30px;background:#f5a623;
-color:black;text-decoration:none;font-weight:600;
-border-radius:8px;transition:.3s
+padding:15px 35px;
+background:#f5a623;
+color:black;
+text-decoration:none;
+font-weight:600;
+border-radius:8px;
+transition:.3s;
 }
-.btn:hover{background:#ffb84d}
-.section{padding:100px 10%}
-.section h2{text-align:center;margin-bottom:60px;font-size:32px}
+
+.btn:hover{
+background:#ffb84d;
+transform:scale(1.05);
+}
+
+/* SECTIONS */
+section{
+padding:120px 10%;
+}
+
+h2{
+text-align:center;
+margin-bottom:60px;
+font-size:34px;
+}
+
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px
+gap:30px;
 }
+
 .card{
-background:#1c1c1c;padding:30px;border-radius:12px;
-transition:.3s
+background:#1c1c1c;
+padding:30px;
+border-radius:12px;
+transition:.4s;
 }
-.card:hover{transform:translateY(-10px);background:#222}
+
+.card:hover{
+transform:translateY(-10px);
+background:#222;
+box-shadow:0 15px 40px rgba(0,0,0,0.5);
+}
+
+/* GALLERY */
 .gallery img{
-width:100%;height:250px;object-fit:cover;
-border-radius:10px;transition:.4s
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:10px;
+transition:.4s;
 }
-.gallery img:hover{transform:scale(1.05)}
+
+.gallery img:hover{
+transform:scale(1.08);
+}
+
+/* PRICING */
+.price{
+font-size:22px;
+margin-top:10px;
+color:#f5a623;
+}
+
+/* CONTACT */
 .contact{
-background:#1c1c1c;text-align:center;padding:80px 20px
+text-align:center;
+background:#1c1c1c;
+padding:100px 20px;
 }
+
 footer{
-text-align:center;padding:20px;background:#000;color:#777
+text-align:center;
+padding:20px;
+background:#000;
+color:#777;
 }
 </style>
 </head>
@@ -64,54 +160,70 @@ text-align:center;padding:20px;background:#000;color:#777
 <body>
 
 <header>
-<div>Solid Construction</div>
-<a href="tel:123456789">📞 123 456 789</a>
+<div class="logo">Solid Construction</div>
+<nav>
+<a href="#uslugi">Usługi</a>
+<a href="#cennik">Cennik</a>
+<a href="#galeria">Galeria</a>
+<a href="#kontakt">Kontakt</a>
+</nav>
 </header>
 
 <section class="hero">
 <div data-aos="fade-up">
 <h1>Budujemy Solidnie</h1>
-<p>Firma budowlana w Krakowie. Terminowość i jakość.</p>
-<a href="tel:123456789" class="btn">Darmowa Wycena</a>
+<p>Firma budowlana w Krakowie – jakość, terminowość, doświadczenie.</p>
+<a href="#kontakt" class="btn">Darmowa Wycena</a>
 </div>
 </section>
 
-<section class="section">
-<h2 data-aos="fade-up">Nasza Oferta</h2>
+<section id="uslugi">
+<h2 data-aos="fade-up">Nasze Usługi</h2>
 <div class="grid">
 <div class="card" data-aos="zoom-in">
 <h3>Budowa Domów</h3>
-<p>Kompleksowa realizacja inwestycji.</p>
+<p>Kompleksowa realizacja inwestycji od A do Z.</p>
 </div>
 <div class="card" data-aos="zoom-in">
 <h3>Remonty Premium</h3>
-<p>Wykończenia pod klucz.</p>
+<p>Wykończenia pod klucz najwyższej jakości.</p>
 </div>
 <div class="card" data-aos="zoom-in">
 <h3>Elewacje</h3>
-<p>Nowoczesne systemy ociepleń.</p>
-</div>
-<div class="card" data-aos="zoom-in">
-<h3>Generalne Wykonawstwo</h3>
-<p>Koordynacja i nadzór inwestycji.</p>
+<p>Nowoczesne systemy termoizolacji.</p>
 </div>
 </div>
 </section>
 
-<section class="section">
-<h2 data-aos="fade-up">Realizacje</h2>
+<section id="cennik">
+<h2 data-aos="fade-up">Cennik</h2>
+<div class="grid">
+<div class="card" data-aos="zoom-in">
+<h3>Budowa domu</h3>
+<p>Od stanu surowego do deweloperskiego.</p>
+<div class="price">od 3500 zł / m²</div>
+</div>
+<div class="card" data-aos="zoom-in">
+<h3>Remont mieszkania</h3>
+<p>Kompleksowe wykończenie.</p>
+<div class="price">od 1200 zł / m²</div>
+</div>
+</div>
+</section>
+
+<section id="galeria">
+<h2 data-aos="fade-up">Galeria Realizacji</h2>
 <div class="grid gallery">
 <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" data-aos="fade-up">
 <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be" data-aos="fade-up">
 <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511" data-aos="fade-up">
-<img src="https://images.unsplash.com/photo-1600607687644-c7f34b5063b2" data-aos="fade-up">
 </div>
 </section>
 
-<section class="contact" data-aos="fade-up">
+<section id="kontakt" class="contact" data-aos="fade-up">
 <h2>Skontaktuj się z nami</h2>
-<p>Zadzwoń i umów bezpłatną konsultację.</p>
-<a href="tel:123456789" class="btn">Zadzwoń teraz</a>
+<p>Zadzwoń i umów bezpłatną wycenę.</p>
+<a href="tel:123456789" class="btn">📞 123 456 789</a>
 </section>
 
 <footer>
@@ -120,10 +232,7 @@ text-align:center;padding:20px;background:#000;color:#777
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-AOS.init({
-duration: 1000,
-once: true
-});
+AOS.init({duration:1000, once:true});
 </script>
 
 </body>
