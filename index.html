@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Solid Construction | Firma Budowlana Kraków</title>
-<meta name="description" content="Profesjonalna firma budowlana w Krakowie. Budowa domów, remonty, elewacje, wykończenia.">
+<meta name="description" content="Profesjonalna firma budowlana w Krakowie. Budowa domów, remonty, elewacje.">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -13,25 +13,23 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 html{scroll-behavior:smooth}
-body{background:#0f0f0f;color:#fff}
+body{background:#0e0e0e;color:#fff}
 
 /* HEADER */
 header{
 position:fixed;
-top:0;
 width:100%;
-background:rgba(0,0,0,0.9);
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 10%;
-z-index:1000;
+padding:15px 10%;
+background:rgba(0,0,0,0.7);
 backdrop-filter:blur(10px);
+z-index:1000;
 }
 
-.logo{
-font-weight:700;
-font-size:22px;
+.logo img{
+height:50px;
 }
 
 nav a{
@@ -54,9 +52,7 @@ bottom:-5px;
 transition:.3s;
 }
 
-nav a:hover::after{
-width:100%;
-}
+nav a:hover::after{width:100%}
 
 /* HERO */
 .hero{
@@ -72,7 +68,7 @@ text-align:center;
 padding:20px;
 }
 
-.hero h1{font-size:55px;margin-bottom:20px}
+.hero h1{font-size:60px;margin-bottom:20px}
 .hero p{font-size:20px;color:#ccc;margin-bottom:30px}
 
 .btn{
@@ -90,16 +86,9 @@ background:#ffb84d;
 transform:scale(1.05);
 }
 
-/* SECTIONS */
-section{
-padding:120px 10%;
-}
-
-h2{
-text-align:center;
-margin-bottom:60px;
-font-size:34px;
-}
+/* SECTION */
+section{padding:120px 10%}
+h2{text-align:center;margin-bottom:60px;font-size:36px}
 
 /* GRID */
 .grid{
@@ -108,17 +97,36 @@ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
 }
 
+/* CARD GLASS EFFECT */
 .card{
-background:#1c1c1c;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
 padding:30px;
-border-radius:12px;
+border-radius:15px;
 transition:.4s;
 }
 
 .card:hover{
 transform:translateY(-10px);
-background:#222;
-box-shadow:0 15px 40px rgba(0,0,0,0.5);
+background:rgba(255,255,255,0.08);
+box-shadow:0 20px 50px rgba(0,0,0,0.5);
+}
+
+/* STATS */
+.stats{
+background:#111;
+text-align:center;
+}
+
+.stat-number{
+font-size:48px;
+color:#f5a623;
+font-weight:700;
+}
+
+.stat-text{
+color:#ccc;
+margin-top:10px;
 }
 
 /* GALLERY */
@@ -126,25 +134,18 @@ box-shadow:0 15px 40px rgba(0,0,0,0.5);
 width:100%;
 height:250px;
 object-fit:cover;
-border-radius:10px;
+border-radius:12px;
 transition:.4s;
 }
 
 .gallery img:hover{
-transform:scale(1.08);
-}
-
-/* PRICING */
-.price{
-font-size:22px;
-margin-top:10px;
-color:#f5a623;
+transform:scale(1.1);
 }
 
 /* CONTACT */
 .contact{
+background:#1a1a1a;
 text-align:center;
-background:#1c1c1c;
 padding:100px 20px;
 }
 
@@ -160,10 +161,11 @@ color:#777;
 <body>
 
 <header>
-<div class="logo">Solid Construction</div>
+<div class="logo">
+<img src="logo.png" alt="Logo firmy">
+</div>
 <nav>
 <a href="#uslugi">Usługi</a>
-<a href="#cennik">Cennik</a>
 <a href="#galeria">Galeria</a>
 <a href="#kontakt">Kontakt</a>
 </nav>
@@ -172,57 +174,59 @@ color:#777;
 <section class="hero">
 <div data-aos="fade-up">
 <h1>Budujemy Solidnie</h1>
-<p>Firma budowlana w Krakowie – jakość, terminowość, doświadczenie.</p>
+<p>Nowoczesne budownictwo. Terminowość. Jakość.</p>
 <a href="#kontakt" class="btn">Darmowa Wycena</a>
 </div>
 </section>
 
-<section id="uslugi">
-<h2 data-aos="fade-up">Nasze Usługi</h2>
+<section class="stats">
+<h2 data-aos="fade-up">Nasze Osiągnięcia</h2>
 <div class="grid">
-<div class="card" data-aos="zoom-in">
-<h3>Budowa Domów</h3>
-<p>Kompleksowa realizacja inwestycji od A do Z.</p>
+<div>
+<div class="stat-number" data-target="150">0</div>
+<div class="stat-text">Zrealizowanych projektów</div>
 </div>
-<div class="card" data-aos="zoom-in">
-<h3>Remonty Premium</h3>
-<p>Wykończenia pod klucz najwyższej jakości.</p>
+<div>
+<div class="stat-number" data-target="12">0</div>
+<div class="stat-text">Lat doświadczenia</div>
 </div>
-<div class="card" data-aos="zoom-in">
-<h3>Elewacje</h3>
-<p>Nowoczesne systemy termoizolacji.</p>
+<div>
+<div class="stat-number" data-target="98">0</div>
+<div class="stat-text">% zadowolonych klientów</div>
 </div>
 </div>
 </section>
 
-<section id="cennik">
-<h2 data-aos="fade-up">Cennik</h2>
+<section id="uslugi">
+<h2 data-aos="fade-up">Usługi</h2>
 <div class="grid">
 <div class="card" data-aos="zoom-in">
-<h3>Budowa domu</h3>
-<p>Od stanu surowego do deweloperskiego.</p>
-<div class="price">od 3500 zł / m²</div>
+<h3>Budowa Domów</h3>
+<p>Kompleksowa realizacja inwestycji.</p>
 </div>
 <div class="card" data-aos="zoom-in">
-<h3>Remont mieszkania</h3>
-<p>Kompleksowe wykończenie.</p>
-<div class="price">od 1200 zł / m²</div>
+<h3>Remonty Premium</h3>
+<p>Wykończenia pod klucz.</p>
+</div>
+<div class="card" data-aos="zoom-in">
+<h3>Elewacje</h3>
+<p>Nowoczesne systemy ociepleń.</p>
 </div>
 </div>
 </section>
 
 <section id="galeria">
-<h2 data-aos="fade-up">Galeria Realizacji</h2>
+<h2 data-aos="fade-up">Galeria</h2>
 <div class="grid gallery">
-<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" data-aos="fade-up">
-<img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be" data-aos="fade-up">
-<img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511" data-aos="fade-up">
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+<img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be">
+<img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
 </div>
 </section>
 
-<section id="kontakt" class="contact" data-aos="fade-up">
-<h2>Skontaktuj się z nami</h2>
-<p>Zadzwoń i umów bezpłatną wycenę.</p>
+<section id="kontakt" class="contact">
+<h2>Kontakt</h2>
+<p>Zadzwoń i umów wycenę.</p>
 <a href="tel:123456789" class="btn">📞 123 456 789</a>
 </section>
 
@@ -233,6 +237,25 @@ color:#777;
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
 AOS.init({duration:1000, once:true});
+
+/* ANIMOWANE LICZBY */
+const counters = document.querySelectorAll('.stat-number');
+
+counters.forEach(counter => {
+  const updateCount = () => {
+    const target = +counter.getAttribute('data-target');
+    const count = +counter.innerText;
+    const increment = target / 200;
+
+    if(count < target){
+      counter.innerText = Math.ceil(count + increment);
+      setTimeout(updateCount, 10);
+    } else {
+      counter.innerText = target;
+    }
+  };
+  updateCount();
+});
 </script>
 
 </body>
