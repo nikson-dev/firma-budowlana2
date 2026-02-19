@@ -1,262 +1,56 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Solid Construction | Firma Budowlana Kraków</title>
-<meta name="description" content="Profesjonalna firma budowlana w Krakowie. Budowa domów, remonty, elewacje.">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-html{scroll-behavior:smooth}
-body{background:#0e0e0e;color:#fff}
-
-/* HEADER */
-header{
-position:fixed;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 10%;
-background:rgba(0,0,0,0.7);
-backdrop-filter:blur(10px);
-z-index:1000;
-}
-
-.logo img{
-height:50px;
-}
-
-nav a{
-margin-left:25px;
-text-decoration:none;
-color:#fff;
-font-weight:500;
-position:relative;
-transition:.3s;
-}
-
-nav a::after{
-content:"";
-position:absolute;
-width:0;
-height:2px;
-background:#f5a623;
-left:0;
-bottom:-5px;
-transition:.3s;
-}
-
-nav a:hover::after{width:100%}
-
-/* HERO */
-.hero{
-height:100vh;
-background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
-url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');
-background-size:cover;
-background-position:center;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-}
-
-.hero h1{font-size:60px;margin-bottom:20px}
-.hero p{font-size:20px;color:#ccc;margin-bottom:30px}
-
-.btn{
-padding:15px 35px;
-background:#f5a623;
-color:black;
-text-decoration:none;
-font-weight:600;
-border-radius:8px;
-transition:.3s;
-}
-
-.btn:hover{
-background:#ffb84d;
-transform:scale(1.05);
-}
-
-/* SECTION */
-section{padding:120px 10%}
-h2{text-align:center;margin-bottom:60px;font-size:36px}
-
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-}
-
-/* CARD GLASS EFFECT */
-.card{
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(15px);
-padding:30px;
-border-radius:15px;
-transition:.4s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-background:rgba(255,255,255,0.08);
-box-shadow:0 20px 50px rgba(0,0,0,0.5);
-}
-
-/* STATS */
-.stats{
-background:#111;
-text-align:center;
-}
-
-.stat-number{
-font-size:48px;
-color:#f5a623;
-font-weight:700;
-}
-
-.stat-text{
-color:#ccc;
-margin-top:10px;
-}
-
-/* GALLERY */
-.gallery img{
-width:100%;
-height:250px;
-object-fit:cover;
-border-radius:12px;
-transition:.4s;
-}
-
-.gallery img:hover{
-transform:scale(1.1);
-}
-
-/* CONTACT */
-.contact{
-background:#1a1a1a;
-text-align:center;
-padding:100px 20px;
-}
-
-footer{
-text-align:center;
-padding:20px;
-background:#000;
-color:#777;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PremiumBud - Strona Główna</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-<header>
-<div class="logo">
-<img src="logo.png" alt="Logo firmy">
+<div id="loader">
+  <div class="spinner"></div>
+  <h2>PremiumBud</h2>
 </div>
-<nav>
-<a href="#uslugi">Usługi</a>
-<a href="#galeria">Galeria</a>
-<a href="#kontakt">Kontakt</a>
-</nav>
+
+<header>
+  <div class="logo">
+    <img src="logo.png" alt="Logo firmy">
+    <span>PremiumBud</span>
+  </div>
+  <nav>
+    <a href="index.html">Start</a>
+    <a href="uslugi.html">Usługi</a>
+    <a href="cennik.html">Cennik</a>
+    <a href="galeria.html">Galeria</a>
+  </nav>
 </header>
 
 <section class="hero">
-<div data-aos="fade-up">
-<h1>Budujemy Solidnie</h1>
-<p>Nowoczesne budownictwo. Terminowość. Jakość.</p>
-<a href="#kontakt" class="btn">Darmowa Wycena</a>
-</div>
+  <h1>Budujemy z jakością Premium</h1>
+  <p>Nowoczesne realizacje • Terminowość • Gwarancja jakości</p>
+  <a href="uslugi.html" class="btn">Zobacz ofertę</a>
 </section>
 
 <section class="stats">
-<h2 data-aos="fade-up">Nasze Osiągnięcia</h2>
-<div class="grid">
-<div>
-<div class="stat-number" data-target="150">0</div>
-<div class="stat-text">Zrealizowanych projektów</div>
-</div>
-<div>
-<div class="stat-number" data-target="12">0</div>
-<div class="stat-text">Lat doświadczenia</div>
-</div>
-<div>
-<div class="stat-number" data-target="98">0</div>
-<div class="stat-text">% zadowolonych klientów</div>
-</div>
-</div>
-</section>
-
-<section id="uslugi">
-<h2 data-aos="fade-up">Usługi</h2>
-<div class="grid">
-<div class="card" data-aos="zoom-in">
-<h3>Budowa Domów</h3>
-<p>Kompleksowa realizacja inwestycji.</p>
-</div>
-<div class="card" data-aos="zoom-in">
-<h3>Remonty Premium</h3>
-<p>Wykończenia pod klucz.</p>
-</div>
-<div class="card" data-aos="zoom-in">
-<h3>Elewacje</h3>
-<p>Nowoczesne systemy ociepleń.</p>
-</div>
-</div>
-</section>
-
-<section id="galeria">
-<h2 data-aos="fade-up">Galeria</h2>
-<div class="grid gallery">
-<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
-<img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be">
-<img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
-</div>
-</section>
-
-<section id="kontakt" class="contact">
-<h2>Kontakt</h2>
-<p>Zadzwoń i umów wycenę.</p>
-<a href="tel:123456789" class="btn">📞 123 456 789</a>
+  <div class="stat">
+    <h2 class="counter" data-target="250">0</h2>
+    <p>Zrealizowanych projektów</p>
+  </div>
+  <div class="stat">
+    <h2 class="counter" data-target="15">0</h2>
+    <p>Lat doświadczenia</p>
+  </div>
+  <div class="stat">
+    <h2 class="counter" data-target="100">0</h2>
+    <p>% Zadowolonych klientów</p>
+  </div>
 </section>
 
 <footer>
-© 2026 Solid Construction | Firma Budowlana Kraków
+  <p>Kontakt: 123-456-789 • email@firma.pl</p>
 </footer>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-AOS.init({duration:1000, once:true});
-
-/* ANIMOWANE LICZBY */
-const counters = document.querySelectorAll('.stat-number');
-
-counters.forEach(counter => {
-  const updateCount = () => {
-    const target = +counter.getAttribute('data-target');
-    const count = +counter.innerText;
-    const increment = target / 200;
-
-    if(count < target){
-      counter.innerText = Math.ceil(count + increment);
-      setTimeout(updateCount, 10);
-    } else {
-      counter.innerText = target;
-    }
-  };
-  updateCount();
-});
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
