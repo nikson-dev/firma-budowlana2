@@ -1,37 +1,42 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box}
 
 body{
 font-family:'Montserrat',sans-serif;
 background:#0a0a0a;
 color:white;
 overflow-x:hidden;
-transition:opacity .4s ease;
+transition:background .4s,color .4s,opacity .4s;
 }
 
-body.fade-out{
-opacity:0;
+body.light{
+background:#f5f5f5;
+color:#111;
 }
 
-/* ANIMOWANE TŁO */
+body.fade-out{opacity:0}
 
-body::before{
-content:"";
+/* LOADER */
+
+#loader{
 position:fixed;
-width:200%;
-height:200%;
-background:radial-gradient(circle at 20% 30%, rgba(255,204,0,.08), transparent 40%),
-radial-gradient(circle at 80% 70%, rgba(255,204,0,.06), transparent 40%);
-animation:moveBg 15s infinite alternate;
-z-index:-1;
+width:100%;
+height:100%;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:3000;
 }
 
-@keyframes moveBg{
-0%{transform:translate(0,0);}
-100%{transform:translate(-10%, -10%);}
+#loader h1{
+font-size:40px;
+letter-spacing:3px;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+0%,100%{opacity:.4}
+50%{opacity:1}
 }
 
 /* HEADER */
@@ -49,20 +54,17 @@ backdrop-filter:blur(12px);
 z-index:1000;
 }
 
-.logo{
-font-weight:800;
-font-size:26px;
-letter-spacing:2px;
+body.light header{
+background:rgba(255,255,255,.7);
 }
 
-.logo span{
-color:#ffcc00;
-}
+.logo{font-weight:800;font-size:26px}
+.logo span{color:#ffcc00}
 
 nav a{
-margin-left:30px;
+margin-left:25px;
 text-decoration:none;
-color:white;
+color:inherit;
 font-weight:600;
 position:relative;
 }
@@ -70,23 +72,21 @@ position:relative;
 nav a::after{
 content:"";
 position:absolute;
-width:0;
-height:2px;
+width:0;height:2px;
 background:#ffcc00;
-bottom:-5px;
-left:0;
+bottom:-5px;left:0;
 transition:.3s;
 }
 
-nav a:hover::after{
-width:100%;
+nav a:hover::after{width:100%}
+
+.toggle-theme{
+margin-left:25px;
+cursor:pointer;
+font-size:18px;
 }
 
-.menu-toggle{
-display:none;
-font-size:24px;
-cursor:pointer;
-}
+.menu-toggle{display:none;font-size:24px;cursor:pointer}
 
 /* HERO */
 
@@ -99,15 +99,8 @@ text-align:center;
 padding-top:80px;
 }
 
-.hero h1{
-font-size:56px;
-margin-bottom:20px;
-}
-
-.hero p{
-opacity:.8;
-margin-bottom:30px;
-}
+.hero h1{font-size:56px;margin-bottom:20px}
+.hero p{opacity:.8;margin-bottom:30px}
 
 .btn{
 background:#ffcc00;
@@ -125,7 +118,7 @@ transform:translateY(-3px);
 box-shadow:0 0 30px rgba(255,204,0,.7);
 }
 
-/* STATYSTYKI */
+/* STATS */
 
 .stats{
 display:flex;
@@ -135,36 +128,34 @@ padding:120px 20px;
 text-align:center;
 }
 
-.stat h2{
-font-size:52px;
-color:#ffcc00;
-margin-bottom:10px;
-}
+.stat h2{font-size:52px;color:#ffcc00}
 
-/* KARTY */
+/* USŁUGI */
 
 .cards{
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
-gap:30px;
-padding:120px 40px;
+gap:40px;
+padding:140px 40px;
 }
 
 .card{
 background:rgba(255,255,255,.05);
 backdrop-filter:blur(10px);
-padding:40px;
-width:260px;
-border-radius:15px;
+padding:60px;
+width:340px;
+border-radius:20px;
 transition:.4s;
 border:1px solid rgba(255,204,0,.2);
+font-size:18px;
+text-align:center;
 }
 
 .card:hover{
 transform:translateY(-10px);
 border:1px solid #ffcc00;
-box-shadow:0 0 25px rgba(255,204,0,.3);
+box-shadow:0 0 30px rgba(255,204,0,.3);
 }
 
 /* GALERIA */
@@ -178,10 +169,10 @@ padding:120px 20px;
 }
 
 .gallery img{
-width:320px;
-height:220px;
+width:340px;
+height:240px;
 object-fit:cover;
-border-radius:12px;
+border-radius:15px;
 cursor:pointer;
 transition:.4s;
 }
@@ -194,10 +185,8 @@ box-shadow:0 0 30px rgba(255,204,0,.4);
 #modal{
 display:none;
 position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
+top:0;left:0;
+width:100%;height:100%;
 background:rgba(0,0,0,.9);
 justify-content:center;
 align-items:center;
@@ -207,10 +196,10 @@ z-index:2000;
 #modal img{
 max-width:90%;
 max-height:90%;
-border-radius:12px;
+border-radius:15px;
 }
 
-/* SCROLL ANIMACJE */
+/* REVEAL */
 
 .reveal{
 opacity:0;
@@ -232,6 +221,8 @@ background:black;
 margin-top:80px;
 }
 
+body.light footer{background:#ddd}
+
 /* RESPONSIVE */
 
 @media(max-width:900px){
@@ -246,20 +237,8 @@ background:black;
 padding:20px;
 }
 
-nav.active{
-display:flex;
-}
-
-.menu-toggle{
-display:block;
-}
-
-.stats{
-flex-direction:column;
-gap:40px;
-}
-
-.hero h1{
-font-size:38px;
-}
+nav.active{display:flex}
+.menu-toggle{display:block}
+.stats{flex-direction:column;gap:40px}
+.hero h1{font-size:38px}
 }
