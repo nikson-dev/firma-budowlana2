@@ -3,216 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bartmal – Profesjonalne Remonty</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-<style>
-:root{
---yellow:#ffd000;
---black:#0f0f0f;
---white:#ffffff;
---gray:#1a1a1a;
-}
-body{
-margin:0;
-font-family:'Poppins',sans-serif;
-background:var(--black);
-color:var(--white);
-overflow-x:hidden;
-transition:0.3s;
-}
-body.light{
-background:#f5f5f5;
-color:#111;
-}
-.loader{
-position:fixed;
-top:0;left:0;width:100%;height:100%;
-background:#000;
-display:flex;
-align-items:center;
-justify-content:center;
-z-index:9999;
-}
-.loader span{
-width:50px;height:50px;border:5px solid #fff;border-top:5px solid var(--yellow);
-border-radius:50%;animation:spin 1s linear infinite;
-}
-@keyframes spin{100%{transform:rotate(360deg)}}
-header{
-padding:20px 10%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:#000;
-position:fixed;
-width:100%;
-z-index:1000;
-}
-.logo{
-font-weight:800;
-font-size:24px;
-color:var(--yellow);
-}
-nav a{
-color:#fff;
-text-decoration:none;
-margin-left:30px;
-font-weight:500;
-}
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');
-background-size:cover;
-background-position:center;
-padding:0 10%;
-}
-.hero h1{
-font-size:60px;
-margin:0;
-animation:fadeIn 1.5s ease;
-}
-.hero p{
-margin:20px 0;
-font-size:20px;
-animation:fadeIn 2s ease;
-}
-.btn{
-background:var(--yellow);
-color:#000;
-padding:15px 40px;
-border:none;
-border-radius:40px;
-font-weight:600;
-cursor:pointer;
-transition:0.3s;
-}
-.btn:hover{transform:scale(1.05)}
-section{
-padding:100px 10%;
-}
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:40px;
-}
-.service-box{
-background:var(--gray);
-padding:60px 30px;
-border-radius:20px;
-text-align:center;
-transition:0.4s;
-min-height:260px;
-}
-.service-box:hover{
-transform:translateY(-10px);
-background:var(--yellow);
-color:#000;
-}
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-.gallery img{
-width:100%;
-border-radius:15px;
-transition:0.4s;
-}
-.gallery img:hover{transform:scale(1.05)}
-.contact-form{
-max-width:600px;
-margin:auto;
-display:flex;
-flex-direction:column;
-gap:20px;
-}
-input,textarea{
-padding:15px;
-border-radius:10px;
-border:none;
-}
-footer{
-text-align:center;
-padding:40px 10%;
-background:#000;
-}
-.reveal{opacity:0;transform:translateY(40px);transition:1s}
-.reveal.active{opacity:1;transform:translateY(0)}
-.theme-toggle{
-background:none;
-border:2px solid var(--yellow);
-color:var(--yellow);
-padding:8px 20px;
-border-radius:30px;
-cursor:pointer;
-}
-@keyframes fadeIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-</style>
+<title>BARTMAL | Remonty Premium</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="loader"><span></span></div>
+
 <header>
-<div class="logo">BARTMAL</div>
-<nav>
-<a href="#uslugi">Usługi</a>
-<a href="#galeria">Galeria</a>
-<a href="#kontakt">Kontakt</a>
-<button class="theme-toggle" onclick="toggleTheme()">Tryb</button>
-</nav>
+    <div class="logo">BART<span>MAL</span></div>
+    <div class="menu-toggle">☰</div>
+    <nav>
+        <a href="index.html">Start</a>
+        <a href="uslugi.html">Usługi</a>
+        <a href="galeria.html">Galeria</a>
+        <a href="kontakt.html">Kontakt</a>
+    </nav>
 </header>
+
 <section class="hero">
-<h1>Profesjonalne Remonty i Wykończenia</h1>
-<p>Solidność, terminowość i najwyższa jakość wykonania.</p>
-<button class="btn" onclick="scrollToSection()">Zobacz Usługi</button>
+    <div class="hero-content">
+        <h1 class="fade-up">Profesjonalne remonty i wykończenia</h1>
+        <p class="fade-up delay">Tworzymy wnętrza na najwyższym poziomie jakości</p>
+        <a href="kontakt.html" class="btn fade-up delay2">Darmowa wycena</a>
+    </div>
 </section>
-<section id="uslugi" class="reveal">
-<h2>Nasze Usługi</h2>
-<div class="services">
-<div class="service-box">Kompleksowe remonty mieszkań</div>
-<div class="service-box">Wykończenia wnętrz</div>
-<div class="service-box">Malowanie i gładzie</div>
-<div class="service-box">Układanie płytek</div>
-</div>
+
+<section class="stats">
+    <div class="stat">
+        <h2 class="counter" data-target="250">0</h2>
+        <p>Zrealizowanych projektów</p>
+    </div>
+    <div class="stat">
+        <h2 class="counter" data-target="10">0</h2>
+        <p>Lat doświadczenia</p>
+    </div>
+    <div class="stat">
+        <h2 class="counter" data-target="100">0</h2>
+        <p>% Zadowolonych klientów</p>
+    </div>
 </section>
-<section id="galeria" class="reveal">
-<h2>Galeria Realizacji</h2>
-<div class="gallery">
-<img src="images/1.jpg">
-<img src="images/2.jpg">
-<img src="images/3.jpg">
-<img src="images/4.jpg">
-</div>
-</section>
-<section id="kontakt" class="reveal">
-<h2>Kontakt</h2>
-<div class="contact-form">
-<input type="text" placeholder="Imię">
-<input type="email" placeholder="Email">
-<textarea rows="5" placeholder="Wiadomość"></textarea>
-<button class="btn">Wyślij</button>
-<p><strong>Numer:</strong> 666 291 280</p>
-<p><strong>Facebook:</strong> <a href="https://www.facebook.com/BartmalRemonty" target="_blank">BartmalRemonty</a></p>
-</div>
-</section>
+
 <footer>
-© 2026 Bartmal – Wszystkie prawa zastrzeżone
+    © 2026 BARTMAL | Remonty Premium
 </footer>
-<script>
-window.addEventListener('load',()=>{document.querySelector('.loader').style.display='none'})
-function scrollToSection(){document.getElementById('uslugi').scrollIntoView({behavior:'smooth'})}
-function toggleTheme(){document.body.classList.toggle('light')}
-function reveal(){
-let reveals=document.querySelectorAll('.reveal');
-for(let i=0;i<reveals.length;i++){
-let windowHeight=window.innerHeight;
-let elementTop=reveals[i].getBoundingClientRect().top;
-if(elementTop<windowHeight-100){reveals[i].classList.add('active')}}}
-window.addEventListener('scroll',reveal);
-</script>
+
+<script src="script.js"></script>
 </body>
 </html>
