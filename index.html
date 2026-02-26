@@ -3,51 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BARTMAL | Remonty Premium</title>
+<title>BARTMAL | Profesjonalne Remonty</title>
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
+<div id="loader">
+    <div class="spinner"></div>
+</div>
+
 <header>
     <div class="logo">BART<span>MAL</span></div>
     <div class="menu-toggle">☰</div>
     <nav>
-        <a href="index.html">Start</a>
-        <a href="uslugi.html">Usługi</a>
-        <a href="galeria.html">Galeria</a>
-        <a href="kontakt.html">Kontakt</a>
+        <a href="#home">Start</a>
+        <a href="#uslugi">Usługi</a>
+        <a href="#realizacje">Realizacje</a>
+        <a href="#kontakt">Kontakt</a>
+        <div class="toggle-theme" onclick="toggleTheme()">☀</div>
     </nav>
 </header>
 
-<section class="hero">
+<section id="home" class="hero">
     <div class="hero-content">
-        <h1 class="fade-up">Profesjonalne remonty i wykończenia</h1>
-        <p class="fade-up delay">Solidność • Precyzja • Terminowość</p>
-        <a href="kontakt.html" class="btn fade-up delay2">Darmowa wycena</a>
+        <h1>Kompleksowe Remonty i Wykończenia Wnętrz</h1>
+        <p>Precyzja. Terminowość. Najwyższa jakość wykonania.</p>
+        <a href="#kontakt" class="btn">Darmowa wycena</a>
     </div>
 </section>
 
-<section class="stats">
-    <div class="stat">
-        <h2 class="counter" data-target="250">0</h2>
-        <p>Zrealizowanych projektów</p>
+<section id="uslugi" class="services">
+    <h2 class="section-title">Nasze Usługi</h2>
+    <div class="cards">
+        <div class="card">Kompleksowe remonty mieszkań</div>
+        <div class="card">Wykończenia wnętrz pod klucz</div>
+        <div class="card">Układanie płytek i paneli</div>
+        <div class="card">Malowanie i gładzie</div>
     </div>
-    <div class="stat">
-        <h2 class="counter" data-target="10">0</h2>
-        <p>Lat doświadczenia</p>
+</section>
+
+<section id="realizacje" class="portfolio">
+    <h2 class="section-title">Galeria Realizacji</h2>
+    <div class="gallery">
+        <img src="images/1.jpg" alt="realizacja">
+        <img src="images/2.jpg" alt="realizacja">
+        <img src="images/3.jpg" alt="realizacja">
+        <img src="images/4.jpg" alt="realizacja">
     </div>
-    <div class="stat">
-        <h2 class="counter" data-target="100">0</h2>
-        <p>% Zadowolonych klientów</p>
+</section>
+
+<section id="kontakt" class="contact">
+    <h2 class="section-title">Kontakt</h2>
+    <div class="contact-box">
+        <p><strong>Telefon:</strong> 666 291 280</p>
+        <p><strong>Facebook:</strong> https://www.facebook.com/BartmalRemonty</p>
     </div>
 </section>
 
 <footer>
-    © 2026 BARTMAL | Remonty Premium
+    © 2026 BARTMAL | Profesjonalne Remonty
 </footer>
 
-<script src="script.js"></script>
+<script>
+window.addEventListener("load",()=>{
+    document.getElementById("loader").style.opacity="0";
+    setTimeout(()=>{
+        document.getElementById("loader").style.display="none";
+    },400);
+});
+
+function toggleTheme(){
+    document.body.classList.toggle("light");
+}
+</script>
+
 </body>
 </html>
 
