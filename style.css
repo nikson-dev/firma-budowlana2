@@ -1,244 +1,90 @@
-*{margin:0;padding:0;box-sizing:border-box}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BARTMAL | Remonty Premium</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
 
-body{
-font-family:'Montserrat',sans-serif;
-background:#0a0a0a;
-color:white;
-overflow-x:hidden;
-transition:background .4s,color .4s,opacity .4s;
+<!-- LOADER -->
+<div id="loader">
+    <h1>BARTMAL</h1>
+</div>
+
+<header>
+    <div class="logo">BART<span>MAL</span></div>
+    <div class="menu-toggle">☰</div>
+    <nav>
+        <a href="index.html">Start</a>
+        <a href="uslugi.html">Usługi</a>
+        <a href="galeria.html">Galeria</a>
+        <a href="kontakt.html">Kontakt</a>
+        <button onclick="toggleTheme()" style="margin-left:15px;padding:6px 12px;cursor:pointer;">Tryb</button>
+    </nav>
+</header>
+
+<section class="hero reveal">
+    <div class="hero-content">
+        <h1 class="fade-up">Profesjonalne remonty i wykończenia</h1>
+        <p class="fade-up delay">Tworzymy wnętrza na najwyższym poziomie jakości</p>
+        <a href="kontakt.html" class="btn fade-up delay2">Darmowa wycena</a>
+    </div>
+</section>
+
+<section class="stats reveal">
+    <div class="stat">
+        <h2 class="counter" data-target="250">0</h2>
+        <p>Zrealizowanych projektów</p>
+    </div>
+    <div class="stat">
+        <h2 class="counter" data-target="10">0</h2>
+        <p>Lat doświadczenia</p>
+    </div>
+    <div class="stat">
+        <h2 class="counter" data-target="100">0</h2>
+        <p>% Zadowolonych klientów</p>
+    </div>
+</section>
+
+<footer>
+    © 2026 BARTMAL | Remonty Premium
+</footer>
+
+<script src="script.js"></script>
+
+<!-- DODATKOWE SKRYPTY -->
+<script>
+
+// LOADER
+window.addEventListener("load", function(){
+    document.getElementById("loader").style.display = "none";
+});
+
+
+
+// DARK / LIGHT MODE
+function toggleTheme(){
+    document.body.classList.toggle("light");
 }
 
-body.light{
-background:#f5f5f5;
-color:#111;
+// REVEAL ON SCROLL
+function reveal(){
+    const reveals = document.querySelectorAll(".reveal");
+    reveals.forEach(el=>{
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        if(elementTop < windowHeight - 100){
+            el.classList.add("active");
+        }
+    });
 }
+window.addEventListener("scroll", reveal);
 
-body.fade-out{opacity:0}
+</script>
 
-/* LOADER */
+</body>
+</html>
 
-#loader{
-position:fixed;
-width:100%;
-height:100%;
-background:black;
-display:flex;
-justify-content:center;
-align-items:center;
-z-index:3000;
-}
-
-#loader h1{
-font-size:40px;
-letter-spacing:3px;
-animation:pulse 1.5s infinite;
-}
-
-@keyframes pulse{
-0%,100%{opacity:.4}
-50%{opacity:1}
-}
-
-/* HEADER */
-
-header{
-position:fixed;
-width:100%;
-top:0;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 60px;
-background:rgba(0,0,0,.6);
-backdrop-filter:blur(12px);
-z-index:1000;
-}
-
-body.light header{
-background:rgba(255,255,255,.7);
-}
-
-.logo{font-weight:800;font-size:26px}
-.logo span{color:#ffcc00}
-
-nav a{
-margin-left:25px;
-text-decoration:none;
-color:inherit;
-font-weight:600;
-position:relative;
-}
-
-nav a::after{
-content:"";
-position:absolute;
-width:0;height:2px;
-background:#ffcc00;
-bottom:-5px;left:0;
-transition:.3s;
-}
-
-nav a:hover::after{width:100%}
-
-.toggle-theme{
-margin-left:25px;
-cursor:pointer;
-font-size:18px;
-}
-
-.menu-toggle{display:none;font-size:24px;cursor:pointer}
-
-/* HERO */
-
-.hero{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding-top:80px;
-}
-
-.hero h1{font-size:56px;margin-bottom:20px}
-.hero p{opacity:.8;margin-bottom:30px}
-
-.btn{
-background:#ffcc00;
-color:black;
-padding:15px 35px;
-text-decoration:none;
-font-weight:700;
-border-radius:6px;
-transition:.3s;
-box-shadow:0 0 20px rgba(255,204,0,.4);
-}
-
-.btn:hover{
-transform:translateY(-3px);
-box-shadow:0 0 30px rgba(255,204,0,.7);
-}
-
-/* STATS */
-
-.stats{
-display:flex;
-justify-content:center;
-gap:120px;
-padding:120px 20px;
-text-align:center;
-}
-
-.stat h2{font-size:52px;color:#ffcc00}
-
-/* USŁUGI */
-
-.cards{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:40px;
-padding:140px 40px;
-}
-
-.card{
-background:rgba(255,255,255,.05);
-backdrop-filter:blur(10px);
-padding:60px;
-width:340px;
-border-radius:20px;
-transition:.4s;
-border:1px solid rgba(255,204,0,.2);
-font-size:18px;
-text-align:center;
-}
-
-.card:hover{
-transform:translateY(-10px);
-border:1px solid #ffcc00;
-box-shadow:0 0 30px rgba(255,204,0,.3);
-}
-
-/* GALERIA */
-
-.gallery{
-display:flex;
-gap:25px;
-justify-content:center;
-flex-wrap:wrap;
-padding:120px 20px;
-}
-
-.gallery img{
-width:340px;
-height:240px;
-object-fit:cover;
-border-radius:15px;
-cursor:pointer;
-transition:.4s;
-}
-
-.gallery img:hover{
-transform:scale(1.05);
-box-shadow:0 0 30px rgba(255,204,0,.4);
-}
-
-#modal{
-display:none;
-position:fixed;
-top:0;left:0;
-width:100%;height:100%;
-background:rgba(0,0,0,.9);
-justify-content:center;
-align-items:center;
-z-index:2000;
-}
-
-#modal img{
-max-width:90%;
-max-height:90%;
-border-radius:15px;
-}
-
-/* REVEAL */
-
-.reveal{
-opacity:0;
-transform:translateY(40px);
-transition:.8s ease;
-}
-
-.reveal.active{
-opacity:1;
-transform:translateY(0);
-}
-
-/* FOOTER */
-
-footer{
-text-align:center;
-padding:40px;
-background:black;
-margin-top:80px;
-}
-
-body.light footer{background:#ddd}
-
-/* RESPONSIVE */
-
-@media(max-width:900px){
-
-nav{
-display:none;
-flex-direction:column;
-position:absolute;
-top:70px;
-right:20px;
-background:black;
-padding:20px;
-}
-
-nav.active{display:flex}
-.menu-toggle{display:block}
-.stats{flex-direction:column;gap:40px}
-.hero h1{font-size:38px}
-}
