@@ -9,11 +9,6 @@
 </head>
 <body>
 
-<!-- LOADER -->
-<div id="loader" style="position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;z-index:9999;">
-    <div style="width:50px;height:50px;border:5px solid #fff;border-top:5px solid #ffd000;border-radius:50%;animation:spin 1s linear infinite;"></div>
-</div>
-
 <header>
     <div class="logo">BART<span>MAL</span></div>
     <div class="menu-toggle">☰</div>
@@ -22,19 +17,18 @@
         <a href="uslugi.html">Usługi</a>
         <a href="galeria.html">Galeria</a>
         <a href="kontakt.html">Kontakt</a>
-        <button onclick="toggleTheme()" style="margin-left:15px;padding:6px 12px;cursor:pointer;">Tryb</button>
     </nav>
 </header>
 
-<section class="hero reveal">
+<section class="hero">
     <div class="hero-content">
         <h1 class="fade-up">Profesjonalne remonty i wykończenia</h1>
-        <p class="fade-up delay">Tworzymy wnętrza na najwyższym poziomie jakości</p>
+        <p class="fade-up delay">Solidność • Precyzja • Terminowość</p>
         <a href="kontakt.html" class="btn fade-up delay2">Darmowa wycena</a>
     </div>
 </section>
 
-<section class="stats reveal">
+<section class="stats">
     <div class="stat">
         <h2 class="counter" data-target="250">0</h2>
         <p>Zrealizowanych projektów</p>
@@ -54,40 +48,6 @@
 </footer>
 
 <script src="script.js"></script>
-
-<!-- DODATKOWE SKRYPTY -->
-<script>
-
-// LOADER
-window.addEventListener("load", function(){
-    document.getElementById("loader").style.display = "none";
-});
-
-// SPIN ANIMATION
-const style = document.createElement('style');
-style.innerHTML = `@keyframes spin {100%{transform:rotate(360deg)}}`;
-document.head.appendChild(style);
-
-// DARK / LIGHT MODE
-function toggleTheme(){
-    document.body.classList.toggle("light-mode");
-}
-
-// REVEAL ON SCROLL
-function reveal(){
-    const reveals = document.querySelectorAll(".reveal");
-    reveals.forEach(el=>{
-        const windowHeight = window.innerHeight;
-        const elementTop = el.getBoundingClientRect().top;
-        if(elementTop < windowHeight - 100){
-            el.classList.add("active");
-        }
-    });
-}
-window.addEventListener("scroll", reveal);
-
-</script>
-
 </body>
 </html>
 
